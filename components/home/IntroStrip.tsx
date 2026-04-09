@@ -24,17 +24,17 @@ const pillars = [
 
 export default function IntroStrip() {
   return (
-    <section className="bg-obsidian py-20 px-6 lg:px-8">
+    <section className="bg-warm-white py-20 px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <SectionDivider className="mb-20" />
 
         {/* Brand statement */}
         <div className="max-w-3xl mx-auto text-center mb-20">
-          <p className="font-display text-2xl md:text-3xl font-light text-ivory leading-relaxed italic">
+          <p className="font-display text-2xl md:text-3xl font-light text-charcoal leading-relaxed italic">
             &ldquo;Luxury real estate isn&apos;t just about price — it&apos;s about knowing exactly
             what you&apos;re buying, and finding the home that fits the life you&apos;ve built.&rdquo;
           </p>
-          <p className="font-body text-gold text-xs tracking-[0.2em] uppercase mt-6">
+          <p className="font-body text-champagne text-xs tracking-[0.2em] uppercase mt-6">
             — Juli Valencia
           </p>
         </div>
@@ -49,16 +49,16 @@ export default function IntroStrip() {
               href={pillar.href}
               className="group text-center"
             >
-              <div className="text-gold text-3xl mb-6 transition-transform duration-300 group-hover:scale-110">
+              <div className="text-champagne text-3xl mb-6 transition-transform duration-300 group-hover:scale-110">
                 {pillar.icon}
               </div>
-              <h3 className="font-display text-xl text-ivory mb-4 group-hover:text-gold transition-colors duration-300">
+              <h3 className="font-display text-xl text-charcoal mb-4 group-hover:text-champagne transition-colors duration-300">
                 {pillar.title}
               </h3>
-              <p className="font-body text-taupe text-sm leading-relaxed">
+              <p className="font-body text-stone text-sm leading-relaxed">
                 {pillar.description}
               </p>
-              <p className="font-body text-gold text-xs tracking-[0.15em] uppercase mt-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p className="font-body text-champagne text-xs tracking-[0.15em] uppercase mt-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 Explore →
               </p>
             </Link>

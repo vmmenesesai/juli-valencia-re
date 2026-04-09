@@ -23,9 +23,9 @@ export default function Button({
     "inline-block font-body text-xs tracking-[0.14em] uppercase px-8 py-4 transition-all duration-300 cursor-pointer";
   const variants = {
     primary:
-      "bg-gold text-obsidian hover:bg-gold-light disabled:opacity-50",
+      "bg-champagne text-warm-white hover:bg-champagne-dark disabled:opacity-50",
     outline:
-      "border border-gold text-gold hover:bg-gold hover:text-obsidian disabled:opacity-50",
+      "border border-champagne text-champagne hover:bg-champagne hover:text-warm-white disabled:opacity-50",
   };
   const classes = `${base} ${variants[variant]} ${className}`;
 

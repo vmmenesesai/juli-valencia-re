@@ -17,12 +17,12 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-obsidian/95 backdrop-blur-sm border-b border-gold/20">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-ivory/95 backdrop-blur-sm border-b border-champagne/15">
       <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-18 flex items-center justify-between" style={{ height: "72px" }}>
         {/* Logo */}
         <Link
           href="/"
-          className="font-display text-xl font-light tracking-widest text-ivory hover:text-gold transition-colors duration-300 uppercase"
+          className="font-display text-xl font-light tracking-widest text-charcoal hover:text-champagne transition-colors duration-300 uppercase"
         >
           Juli Valencia
         </Link>
@@ -35,8 +35,8 @@ export default function Nav() {
               href={link.href}
               className={`font-body text-xs tracking-[0.12em] uppercase transition-colors duration-300 ${
                 pathname === link.href
-                  ? "text-gold"
-                  : "text-taupe hover:text-ivory"
+                  ? "text-champagne"
+                  : "text-stone hover:text-charcoal"
               }`}
             >
               {link.label}
@@ -44,7 +44,7 @@ export default function Nav() {
           ))}
           <Link
             href="/contact"
-            className="ml-4 px-5 py-2 border border-gold text-gold text-xs tracking-[0.12em] uppercase font-body hover:bg-gold hover:text-obsidian transition-all duration-300"
+            className="ml-4 px-5 py-2 border border-champagne text-champagne text-xs tracking-[0.12em] uppercase font-body hover:bg-champagne hover:text-warm-white transition-all duration-300"
           >
             Schedule a Consultation
           </Link>
@@ -52,21 +52,21 @@ export default function Nav() {
 
         {/* Mobile hamburger */}
         <button
-          className="lg:hidden text-ivory p-2"
+          className="lg:hidden text-charcoal p-2"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
           <div className="w-6 flex flex-col gap-1.5">
-            <span className={`block h-px bg-ivory transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`block h-px bg-ivory transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
-            <span className={`block h-px bg-ivory transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            <span className={`block h-px bg-charcoal transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+            <span className={`block h-px bg-charcoal transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`block h-px bg-charcoal transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
           </div>
         </button>
       </nav>
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-midnight border-t border-gold/20 py-6 px-6">
+        <div className="lg:hidden bg-warm-white border-t border-champagne/15 py-6 px-6">
           <div className="flex flex-col gap-5">
             {navLinks.map((link) => (
               <Link
@@ -74,7 +74,7 @@ export default function Nav() {
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
                 className={`font-body text-sm tracking-[0.12em] uppercase transition-colors duration-300 ${
-                  pathname === link.href ? "text-gold" : "text-taupe"
+                  pathname === link.href ? "text-champagne" : "text-stone"
                 }`}
               >
                 {link.label}
@@ -83,7 +83,7 @@ export default function Nav() {
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="mt-2 px-5 py-3 border border-gold text-gold text-xs tracking-[0.12em] uppercase text-center font-body hover:bg-gold hover:text-obsidian transition-all duration-300"
+              className="mt-2 px-5 py-3 border border-champagne text-champagne text-xs tracking-[0.12em] uppercase text-center font-body hover:bg-champagne hover:text-warm-white transition-all duration-300"
             >
               Schedule a Consultation
             </Link>
