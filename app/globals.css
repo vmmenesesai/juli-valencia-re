@@ -1,26 +1,44 @@
 @import "tailwindcss";
 
+@theme {
+  /* Colors */
+  --color-obsidian: #1A1A1A;
+  --color-gold: #C9A96E;
+  --color-gold-light: #E2C99A;
+  --color-ivory: #FFFFF0;
+  --color-taupe: #B5A99A;
+  --color-midnight: #0D1B2A;
+
+  /* Fonts */
+  --font-display: var(--font-cormorant), "Georgia", serif;
+  --font-body: var(--font-montserrat), "Helvetica Neue", sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #1A1A1A;
+  --foreground: #FFFFF0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Gold divider utility */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #C9A96E, transparent);
+}
+
+/* Selection color */
+::selection {
+  background-color: #C9A96E;
+  color: #1A1A1A;
 }

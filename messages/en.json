@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "logo": "Juli Valencia",
+    "neighborhoods": "Neighborhoods",
+    "howToChoose": "How to Choose",
+    "luxuryFeatures": "Luxury Features",
+    "workingWithRealtor": "Why a Specialist",
+    "about": "About Juli",
+    "cta": "Schedule a Consultation"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "San Antonio · Luxury Real Estate",
+      "headline": "Your Guide to Luxury Living in San Antonio",
+      "subheadline": "Expert insight from a global luxury professional with 22+ years of experience across New York real estate, Emirates Airlines, and Marriott International.",
+      "cta": "Schedule a Consultation"
+    },
+    "quote": "Luxury real estate isn't just about price — it's about knowing exactly what you're buying, and finding the home that fits the life you've built.",
+    "ctaBanner": {
+      "eyebrow": "Ready When You Are",
+      "headline": "Let's Find Your Luxury Home in San Antonio",
+      "body": "Every luxury purchase begins with a conversation. Tell Juli what you're looking for and she'll guide you from research to keys in hand.",
+      "cta": "Schedule a Consultation"
+    }
+  },
+  "contact": {
+    "headline": "Schedule a Consultation",
+    "subheadline": "Every luxury home purchase begins with the right conversation. Tell Juli what you're looking for and she'll respond personally within 24 hours.",
+    "responseTime": "Juli responds to every inquiry personally within 24 hours.",
+    "instagram": "@julivalenciare",
+    "submitButton": "Request a Consultation",
+    "successHeadline": "Thank You",
+    "successBody": "Your consultation request has been received. Juli will respond within 24 hours."
+  },
+  "footer": {
+    "tagline": "Luxury Residential Realtor",
+    "location": "San Antonio, TX",
+    "instagram": "@julivalenciare",
+    "exploreHeading": "Explore",
+    "ctaHeading": "Ready to Begin?",
+    "ctaBody": "Buying a luxury home in San Antonio starts with the right conversation.",
+    "ctaButton": "Schedule a Consultation",
+    "copyright": "Juli Valencia. All rights reserved.",
+    "subline": "Luxury Real Estate · San Antonio, TX"
+  }
+}
