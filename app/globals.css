@@ -1,22 +1,33 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors */
-  --color-obsidian: #1A1A1A;
-  --color-gold: #C9A96E;
-  --color-gold-light: #E2C99A;
-  --color-ivory: #FFFFF0;
-  --color-taupe: #B5A99A;
-  --color-midnight: #0D1B2A;
+  /* Colors — light editorial luxury palette */
+  --color-ivory: #F5F0E8;
+  --color-ivory-light: #FAF8F4;
+  --color-cream: #EDE8DE;
+  --color-champagne: #C5A467;
+  --color-champagne-light: #D4B97A;
+  --color-champagne-dark: #A8893F;
+  --color-charcoal: #2A2A2A;
+  --color-graphite: #4A4A4A;
+  --color-stone: #8A8278;
+  --color-warm-white: #FEFCF9;
+
+  /* Legacy aliases for easier migration */
+  --color-obsidian: #2A2A2A;
+  --color-gold: #C5A467;
+  --color-gold-light: #D4B97A;
+  --color-taupe: #8A8278;
+  --color-midnight: #F5F0E8;
 
   /* Fonts */
-  --font-display: var(--font-cormorant), "Georgia", serif;
-  --font-body: var(--font-montserrat), "Helvetica Neue", sans-serif;
+  --font-display: var(--font-playfair-display), "Georgia", serif;
+  --font-body: var(--font-syne), "Helvetica Neue", sans-serif;
 }
 
 :root {
-  --background: #1A1A1A;
-  --foreground: #FFFFF0;
+  --background: #F5F0E8;
+  --foreground: #2A2A2A;
 }
 
 html {
@@ -31,14 +42,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Gold divider utility */
+/* Champagne divider utility */
 .gold-divider {
   height: 1px;
-  background: linear-gradient(to right, transparent, #C9A96E, transparent);
+  background: linear-gradient(to right, transparent, #C5A467, transparent);
 }
 
 /* Selection color */
 ::selection {
-  background-color: #C9A96E;
-  color: #1A1A1A;
+  background-color: #C5A467;
+  color: #FEFCF9;
+}
+
+/* Smooth editorial transitions */
+a,
+button {
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
