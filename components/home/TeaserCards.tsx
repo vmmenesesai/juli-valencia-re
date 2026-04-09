@@ -1,91 +1,116 @@
 import Link from "next/link";
+import Button from "@/components/ui/Button";
 
-const cards = [
+const pillars = [
   {
     href: "/neighborhoods",
-    label: "Neighborhoods",
+    number: "01",
     title: "San Antonio's Premier Luxury Neighborhoods",
     description:
       "From The Dominion's gated grandeur to the historic charm of King William — know the city before you search.",
-    number: "01",
   },
   {
     href: "/how-to-choose",
-    label: "Buyer's Framework",
+    number: "02",
     title: "How to Choose Your Luxury Home",
     description:
       "A structured, six-step decision framework that separates confident buyers from overwhelmed ones.",
-    number: "02",
   },
   {
     href: "/luxury-features",
-    label: "What to Look For",
+    number: "03",
     title: "Luxury Home Features That Matter",
     description:
       "Wolf appliances, gunite pools, smart home systems — learn what separates true luxury from a premium price tag.",
-    number: "03",
   },
   {
     href: "/working-with-realtor",
-    label: "Why a Specialist",
-    title: "Why Your Realtor Choice Matters in Luxury",
+    number: "04",
+    title: "Why Your Realtor Choice Matters",
     description:
       "Off-market access, nuanced negotiation, and deep local knowledge — what a luxury specialist actually brings.",
-    number: "04",
   },
 ];
 
 export default function TeaserCards() {
   return (
-    <section className="bg-cream py-24 px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <p className="font-body text-champagne text-xs tracking-[0.25em] uppercase mb-4">
-            The Buyer&apos;s Resource
+    <>
+      {/* Content pillars */}
+      <section className="bg-white py-16 md:py-24 px-6 md:px-10 lg:px-16">
+        <div className="max-w-6xl mx-auto">
+          {/* Section header */}
+          <div className="lg:grid lg:grid-cols-12 lg:gap-16 mb-12 md:mb-16">
+            <div className="lg:col-span-4 mb-6 lg:mb-0">
+              <p className="font-ui text-[10px] md:text-xs tracking-[0.3em] uppercase text-gold mb-3">
+                The Buyer&apos;s Resource
+              </p>
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold italic text-black leading-tight">
+                Everything You Need
+              </h2>
+            </div>
+            <div className="lg:col-span-8 lg:flex lg:items-end">
+              <p className="font-body text-gray text-base md:text-lg font-light leading-relaxed max-w-xl">
+                A curated collection of guides built from two decades of luxury
+                real estate experience. Content-first — no listings, no pressure,
+                just expertise.
+              </p>
+            </div>
+          </div>
+
+          {/* Numbered list */}
+          <div className="border-t border-gray-light">
+            {pillars.map((pillar) => (
+              <Link
+                key={pillar.href}
+                href={pillar.href}
+                className="group block border-b border-gray-light py-6 md:py-8 transition-colors duration-300 hover:bg-gray-light/30"
+              >
+                <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+                  {/* Number */}
+                  <span className="font-ui text-xs tracking-[0.2em] text-gold shrink-0 pt-1">
+                    {pillar.number}
+                  </span>
+
+                  {/* Title + description */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-display text-xl md:text-2xl lg:text-3xl font-bold italic text-black leading-snug group-hover:text-forest transition-colors duration-300">
+                      {pillar.title}
+                    </h3>
+                    <p className="font-body text-gray text-sm md:text-base font-light leading-relaxed mt-2 max-w-2xl">
+                      {pillar.description}
+                    </p>
+                  </div>
+
+                  {/* Arrow */}
+                  <span className="font-body text-sm text-gray group-hover:text-forest transition-colors duration-300 shrink-0 self-center hidden md:block">
+                    →
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA band */}
+      <section className="bg-obsidian py-16 md:py-24 px-6 md:px-10 lg:px-16">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="font-ui text-[10px] md:text-xs tracking-[0.3em] uppercase text-gold mb-6">
+            Ready When You Are
           </p>
-          <h2 className="font-display text-4xl md:text-5xl font-light text-charcoal">
-            Everything You Need to Buy with Confidence
+          <h2 className="font-display text-3xl md:text-4xl lg:text-[56px] font-bold italic text-white leading-tight mb-6">
+            Let&apos;s Find Your Luxury Home in San Antonio
           </h2>
+          <p className="font-body text-white/60 text-base md:text-lg font-light leading-relaxed max-w-xl mx-auto mb-10">
+            Every luxury purchase begins with a conversation. Tell Juli what
+            you&apos;re looking for and she&apos;ll guide you from research to
+            keys in hand.
+          </p>
+          <Button href="/contact" variant="outline-light">
+            Schedule a Consultation
+          </Button>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-champagne/20">
-          {cards.map((card) => (
-            <Link
-              key={card.href}
-              href={card.href}
-              className="group relative bg-warm-white p-10 hover:bg-ivory transition-colors duration-500 overflow-hidden"
-            >
-              {/* Number watermark */}
-              <span className="absolute top-6 right-8 font-display text-7xl font-light text-champagne/10 group-hover:text-champagne/20 transition-colors duration-500 select-none">
-                {card.number}
-              </span>
-
-              {/* Label */}
-              <p className="font-body text-champagne text-xs tracking-[0.2em] uppercase mb-4">
-                {card.label}
-              </p>
-
-              {/* Title */}
-              <h3 className="font-display text-2xl md:text-3xl font-light text-charcoal leading-snug mb-4 group-hover:text-champagne-dark transition-colors duration-300 max-w-xs">
-                {card.title}
-              </h3>
-
-              {/* Description */}
-              <p className="font-body text-stone text-sm leading-relaxed mb-8">
-                {card.description}
-              </p>
-
-              {/* CTA */}
-              <p className="font-body text-xs tracking-[0.15em] uppercase text-champagne border-b border-champagne/40 inline-block pb-1 group-hover:border-champagne transition-colors duration-300">
-                Read more →
-              </p>
-
-              {/* Hover champagne border */}
-              <div className="absolute bottom-0 left-0 right-0 h-px bg-champagne scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-            </Link>
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

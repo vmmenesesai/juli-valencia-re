@@ -2,48 +2,76 @@ import Button from "@/components/ui/Button";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-ivory">
-      {/* Subtle texture overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-warm-white via-ivory to-cream opacity-80" />
+    <section className="relative min-h-screen bg-white pt-24 lg:pt-0 overflow-hidden">
+      {/* Desktop: asymmetric grid / Mobile: stacked */}
+      <div className="lg:grid lg:grid-cols-12 lg:min-h-screen">
 
-      {/* Decorative champagne accent lines */}
-      <div className="absolute left-12 top-1/4 w-px h-48 bg-gradient-to-b from-transparent via-champagne/30 to-transparent" />
-      <div className="absolute right-12 top-1/3 w-px h-48 bg-gradient-to-b from-transparent via-champagne/30 to-transparent" />
+        {/* Left panel — headline */}
+        <div className="relative flex flex-col justify-center px-6 md:px-10 lg:px-16 py-16 lg:py-0 lg:col-span-7">
+          {/* Rotated vertical text — desktop only */}
+          <div className="hidden lg:flex absolute left-6 top-1/2 -translate-y-1/2 -rotate-90 origin-center whitespace-nowrap">
+            <p className="font-ui text-[10px] tracking-[0.3em] uppercase text-gray">
+              Luxury Real Estate · San Antonio
+            </p>
+          </div>
 
-      {/* Horizontal accent */}
-      <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-champagne/10 to-transparent" />
+          {/* Counter */}
+          <div className="flex items-center gap-4 mb-8 lg:mb-12 lg:ml-12">
+            <span className="font-ui text-xs tracking-[0.2em] uppercase text-gold">01</span>
+            <div className="h-px w-12 bg-gold/40" />
+          </div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center">
-        <p className="font-body text-champagne text-xs tracking-[0.35em] uppercase mb-8">
-          San Antonio · Luxury Real Estate
-        </p>
+          {/* Mobile label */}
+          <p className="font-ui text-[10px] md:text-xs tracking-[0.3em] uppercase text-gray mb-4 lg:ml-12 lg:hidden">
+            Luxury Real Estate · San Antonio
+          </p>
 
-        <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-charcoal leading-[1.1] tracking-wide mb-8">
-          Your Guide to<br />
-          <span className="italic text-champagne">Luxury Living</span><br />
-          in San Antonio
-        </h1>
+          <div className="lg:ml-12 max-w-2xl">
+            <h1 className="font-display text-[40px] md:text-[56px] lg:text-[72px] xl:text-[84px] font-bold italic text-black leading-[1.05] tracking-tight">
+              Your Guide to{" "}
+              <span className="text-forest">Luxury Living</span>{" "}
+              in San Antonio
+            </h1>
 
-        <div className="gold-divider max-w-24 mx-auto mb-8" />
+            <p className="font-body text-gray text-base md:text-lg font-light leading-relaxed mt-6 md:mt-8 max-w-lg">
+              Expert insight from a global luxury professional with 22+ years
+              of experience across New York real estate, Emirates Airlines, and
+              Marriott International.
+            </p>
 
-        <p className="font-body text-stone text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-12">
-          Expert insight from a global luxury professional with 22+ years of experience
-          across New York real estate, Emirates Airlines, and Marriott International.
-        </p>
+            <div className="mt-8 md:mt-10">
+              <Button href="/contact" variant="primary">
+                Schedule a Consultation
+              </Button>
+            </div>
+          </div>
+        </div>
 
-        <Button href="/contact" variant="primary">
-          Schedule a Consultation
-        </Button>
+        {/* Right panel — dark forest green quote */}
+        <div className="relative bg-forest flex items-center lg:col-span-5">
+          <div className="px-6 md:px-10 lg:px-14 py-16 lg:py-0">
+            <p className="font-ui text-[10px] tracking-[0.3em] uppercase text-gold mb-6">
+              From Juli
+            </p>
+            <blockquote className="font-display text-xl md:text-2xl lg:text-3xl font-normal italic text-white/90 leading-relaxed">
+              &ldquo;Luxury real estate isn&apos;t just about price — it&apos;s
+              about knowing exactly what you&apos;re buying, and finding the home
+              that fits the life you&apos;ve built.&rdquo;
+            </blockquote>
+            <p className="font-ui text-xs tracking-[0.2em] uppercase text-gold/80 mt-8">
+              — Juli Valencia
+            </p>
+          </div>
+
+          {/* Decorative gold line */}
+          <div className="absolute left-0 top-8 bottom-8 w-px bg-gold/20 hidden lg:block" />
+        </div>
       </div>
 
-      {/* Bottom fade to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-ivory to-transparent" />
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-        <p className="font-body text-xs tracking-[0.2em] uppercase text-charcoal">Scroll</p>
-        <div className="w-px h-10 bg-charcoal/40 animate-pulse" />
+      {/* Scroll indicator — desktop only */}
+      <div className="hidden lg:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 opacity-30">
+        <p className="font-ui text-[10px] tracking-[0.25em] uppercase text-black">Scroll</p>
+        <div className="w-px h-8 bg-black animate-pulse" />
       </div>
     </section>
   );
