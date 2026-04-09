@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Syne } from "next/font/google";
+import { Playfair_Display, Syne, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
@@ -15,6 +15,12 @@ const syne = Syne({
   variable: "--font-syne",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -36,9 +42,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${syne.variable} h-full`}
+      className={`${playfair.variable} ${syne.variable} ${dmSans.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col bg-ivory text-charcoal antialiased">
+      <body className="min-h-full flex flex-col bg-white text-black antialiased">
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />

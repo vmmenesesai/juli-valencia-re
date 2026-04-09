@@ -1,72 +1,55 @@
-import Link from "next/link";
-import SectionDivider from "@/components/ui/SectionDivider";
+const tickerItems = [
+  "Luxury Residential",
+  "San Antonio TX",
+  "Emirates Airlines Alumni",
+  "Marriott International",
+  "New York Real Estate",
+  "Bilingual EN / ES",
+  "22+ Years Experience",
+  "House Flipping Expert",
+];
 
-const pillars = [
-  {
-    icon: "◈",
-    title: "San Antonio's Luxury Neighborhoods",
-    description: "Know where to look before you search — a curated guide to the city's most prestigious communities.",
-    href: "/neighborhoods",
-  },
-  {
-    icon: "◇",
-    title: "How to Choose Your Luxury Home",
-    description: "A step-by-step buyer's framework built from two decades of high-end real estate experience.",
-    href: "/how-to-choose",
-  },
-  {
-    icon: "◆",
-    title: "What Luxury Really Means",
-    description: "Features, finishes, and what to demand — so you know the difference between expensive and exceptional.",
-    href: "/luxury-features",
-  },
+const stats = [
+  { value: "22+", label: "Years of Experience" },
+  { value: "$2M", label: "Luxury Threshold" },
+  { value: "EN/ES", label: "Bilingual Service" },
+  { value: "3", label: "Industries Combined" },
 ];
 
 export default function IntroStrip() {
+  const tickerContent = tickerItems.join(" \u2726 ");
+
   return (
-    <section className="bg-warm-white py-20 px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <SectionDivider className="mb-20" />
-
-        {/* Brand statement */}
-        <div className="max-w-3xl mx-auto text-center mb-20">
-          <p className="font-display text-2xl md:text-3xl font-light text-charcoal leading-relaxed italic">
-            &ldquo;Luxury real estate isn&apos;t just about price — it&apos;s about knowing exactly
-            what you&apos;re buying, and finding the home that fits the life you&apos;ve built.&rdquo;
-          </p>
-          <p className="font-body text-champagne text-xs tracking-[0.2em] uppercase mt-6">
-            — Juli Valencia
-          </p>
-        </div>
-
-        <SectionDivider className="mb-20" />
-
-        {/* 3-column pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {pillars.map((pillar) => (
-            <Link
-              key={pillar.href}
-              href={pillar.href}
-              className="group text-center"
-            >
-              <div className="text-champagne text-3xl mb-6 transition-transform duration-300 group-hover:scale-110">
-                {pillar.icon}
-              </div>
-              <h3 className="font-display text-xl text-charcoal mb-4 group-hover:text-champagne transition-colors duration-300">
-                {pillar.title}
-              </h3>
-              <p className="font-body text-stone text-sm leading-relaxed">
-                {pillar.description}
-              </p>
-              <p className="font-body text-champagne text-xs tracking-[0.15em] uppercase mt-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                Explore →
-              </p>
-            </Link>
+    <>
+      {/* Scrolling ticker */}
+      <div className="border-y border-gray-light overflow-hidden py-4 md:py-5">
+        <div className="animate-marquee flex whitespace-nowrap">
+          {/* Duplicate for seamless loop */}
+          {[0, 1].map((i) => (
+            <span key={i} className="font-ui text-xs md:text-sm tracking-[0.15em] uppercase text-gray mx-0 shrink-0">
+              {tickerContent} &ensp;✦&ensp; {tickerContent} &ensp;✦&ensp;
+            </span>
           ))}
         </div>
-
-        <SectionDivider className="mt-20" />
       </div>
-    </section>
+
+      {/* Stats row */}
+      <section className="bg-white py-16 md:py-20 px-6 md:px-10 lg:px-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center lg:text-left">
+                <p className="font-display text-4xl md:text-5xl lg:text-6xl font-bold italic text-forest leading-none">
+                  {stat.value}
+                </p>
+                <p className="font-ui text-[10px] md:text-xs tracking-[0.2em] uppercase text-gray mt-3">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

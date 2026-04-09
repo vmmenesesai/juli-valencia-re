@@ -9,7 +9,7 @@ const navLinks = [
   { href: "/how-to-choose", label: "How to Choose" },
   { href: "/luxury-features", label: "Luxury Features" },
   { href: "/working-with-realtor", label: "Why a Specialist" },
-  { href: "/about", label: "About Juli" },
+  { href: "/about", label: "About" },
 ];
 
 export default function Nav() {
@@ -17,26 +17,26 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-ivory/95 backdrop-blur-sm border-b border-champagne/15">
-      <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-18 flex items-center justify-between" style={{ height: "72px" }}>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md">
+      <nav className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 flex items-center justify-between" style={{ height: "72px" }}>
         {/* Logo */}
         <Link
           href="/"
-          className="font-display text-xl font-light tracking-widest text-charcoal hover:text-champagne transition-colors duration-300 uppercase"
+          className="font-display text-xl md:text-2xl font-bold italic text-black hover:text-forest transition-colors duration-300"
         >
           Juli Valencia
         </Link>
 
-        {/* Desktop nav */}
-        <div className="hidden lg:flex items-center gap-8">
+        {/* Desktop nav — lg only */}
+        <div className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`font-body text-xs tracking-[0.12em] uppercase transition-colors duration-300 ${
+              className={`font-ui text-[11px] tracking-[0.15em] uppercase transition-colors duration-300 ${
                 pathname === link.href
-                  ? "text-champagne"
-                  : "text-stone hover:text-charcoal"
+                  ? "text-forest"
+                  : "text-gray hover:text-black"
               }`}
             >
               {link.label}
@@ -44,37 +44,37 @@ export default function Nav() {
           ))}
           <Link
             href="/contact"
-            className="ml-4 px-5 py-2 border border-champagne text-champagne text-xs tracking-[0.12em] uppercase font-body hover:bg-champagne hover:text-warm-white transition-all duration-300"
+            className="ml-2 px-6 py-2.5 rounded-full bg-forest text-white font-ui text-[11px] tracking-[0.12em] uppercase hover:bg-forest-light transition-colors duration-300"
           >
-            Schedule a Consultation
+            Contact Juli
           </Link>
         </div>
 
-        {/* Mobile hamburger */}
+        {/* Hamburger — mobile + tablet */}
         <button
-          className="lg:hidden text-charcoal p-2"
+          className="lg:hidden p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
           <div className="w-6 flex flex-col gap-1.5">
-            <span className={`block h-px bg-charcoal transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`block h-px bg-charcoal transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
-            <span className={`block h-px bg-charcoal transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            <span className={`block h-px bg-black transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[7px]" : ""}`} />
+            <span className={`block h-px bg-black transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`block h-px bg-black transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""}`} />
           </div>
         </button>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile + tablet menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-warm-white border-t border-champagne/15 py-6 px-6">
-          <div className="flex flex-col gap-5">
+        <div className="lg:hidden bg-white border-t border-gray-light py-8 px-6 md:px-10">
+          <div className="flex flex-col gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className={`font-body text-sm tracking-[0.12em] uppercase transition-colors duration-300 ${
-                  pathname === link.href ? "text-champagne" : "text-stone"
+                className={`font-ui text-sm tracking-[0.12em] uppercase transition-colors duration-300 min-h-[44px] flex items-center ${
+                  pathname === link.href ? "text-forest" : "text-gray hover:text-black"
                 }`}
               >
                 {link.label}
@@ -83,9 +83,9 @@ export default function Nav() {
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="mt-2 px-5 py-3 border border-champagne text-champagne text-xs tracking-[0.12em] uppercase text-center font-body hover:bg-champagne hover:text-warm-white transition-all duration-300"
+              className="mt-2 px-6 py-3 rounded-full bg-forest text-white font-ui text-sm tracking-[0.12em] uppercase text-center hover:bg-forest-light transition-colors duration-300 min-h-[44px] flex items-center justify-center"
             >
-              Schedule a Consultation
+              Contact Juli
             </Link>
           </div>
         </div>
